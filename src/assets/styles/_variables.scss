@@ -1,0 +1,19 @@
+@use "sass:color";
+
+// Typography
+$font-family-sans-serif: "Lato", sans-serif, "Helvetica Neue", arial, sans-serif;
+$font-family-serif: "Georgia", "Times New Roman", serif;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+$font-size-base: 18px;
+$font-size-large: 40px;
+$font-size-extra-large: 70px;
+$line-height-base: 24px;
+
+// Colors
+$color-primary: #e4e3ae;
+$color-secondary: #908682;
+$color-bg: #161616;
+
+// Breakpoints
+$breakpoint-mobile: 768px;
