@@ -338,7 +338,7 @@ textarea {
 }
 
 button[type="submit"] {
-  background-color: #007bff;
+  background-color: #0071eb;
   color: white;
   border: none;
   border-radius: 5px;
@@ -348,10 +348,11 @@ button[type="submit"] {
   justify-self: left; /* Align the button to the end of its grid cell */
   grid-column: 2; /* Place the button in the second column */
   width: 30%;
+  font-size: 16px;
 }
 
 button[type="submit"]:hover {
-  background-color: #0152a8;
+  background-color: #0167d3;
 }
 
 /* ------------------------------------ *\
