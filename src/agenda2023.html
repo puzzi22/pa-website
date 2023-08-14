@@ -1,59 +1,433 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="./assets/styles/main.scss"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400&display=swap"
-            rel="stylesheet"
-        />
-        <!-- do not remove this line! -->
-        <title>Pierre-Antoine Tremblay</title>
-    </head>
-    <body>
-        <div class="main-hero agenda-hero">
-            <include src="./views/main-nav.html"></include>
-            <h1 class="main-hero__title">Agenda 2023</h1>
-        </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- do not remove this line! -->
+    <title>Pierre-Antoine Tremblay</title>
+  </head>
+  <body>
+    <div class="main-hero agenda-hero">
+      <include src="./views/main-nav.html"></include>
+      <h1 class="main-hero__title agenda-hero__title">Agenda 2023</h1>
+    </div>
 
-        <section id="agenda">
-            <div class="container">
-                <h1 class="section__title">Agenda 2023</h1>
-                <div class="projects">
-                    <div class="project">
-                        <p>
-                            24/01 | Mozart-Saal, Konzerthaus, Vienna
-                            (Austria)<br />
-                            Graindelavoix, Björn Schmelzer<br />
-                            Brumel, <cite>Missa “Et ecce terrae motus”</cite>
-                        </p>
-                    </div>
-                    <div class="project">
-                        <p>
-                            28/01 | Salzburg Mozarteum Foundation, Großer Saal
-                            (Austria)<br />
-                            Europa Galante, Fabio Biondi<br />
-                            Mozart, <cite>Symphonies Nos 11, 13 & 30</cite>
-                        </p>
-                    </div>
-                    <!-- Add more projects following the same pattern -->
-                    <div class="project">
-                        <p>
-                            31/12 | Tonhalle, Düsseldorf (Germany)<br />
-                            Das Neue Orchestre, Christoph Spering<br />
-                            Beethoven, <cite>Symphony No. 9</cite>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </body>
+    <section id="agenda">
+      <div class="container">
+        <!-- <h1 class="section__title">Agenda 2023</h1> -->
+        <ul class="year-menu">
+          <li class="year-menu__item">
+            <a href="#">2010</a>
+          </li>
+          <li class="year-menu__item">
+            <a href="#">2011</a>
+          </li>
+          <li class="year-menu__item">
+            <a href="#">2012</a>
+          </li>
+          <li class="year-menu__item">
+            <a href="#">2013</a>
+          </li>
+          <li class="year-menu__item">
+            <a href="#">2014</a>
+          </li>
+          <li class="year-menu__item">
+            <a href="#">2015</a>
+          </li>
+          <li class="year-menu__item">
+            <a href="#">2016</a>
+          </li>
+          <li class="year-menu__item">
+            <a href="#">2017</a>
+          </li>
+          <li class="year-menu__item">
+            <a href="#">2018</a>
+          </li>
+          <li class="year-menu__item">
+            <a href="#">2019</a>
+          </li>
+          <li class="year-menu__item">
+            <a href="#">2020</a>
+          </li>
+          <li class="year-menu__item">
+            <a href="#">2021</a>
+          </li>
+          <li class="year-menu__item">
+            <a href="#">2022</a>
+          </li>
+          <li class="year-menu__item">
+            <a href="#">2023</a>
+          </li>
+        </ul>
+        <div class="projects">
+          <div class="project">
+            <p>
+              24/01 | Mozart-Saal, Konzerthaus, Vienna (Austria)
+              <br />
+              Graindelavoix, Björn Schmelzer
+              <br />
+              Brumel,
+              <cite>Missa “Et ecce terrae motus”</cite>
+            </p>
+          </div>
+          <div class="project">
+            <p>
+              28/01 | Salzburg Mozarteum Foundation, Großer Saal (Austria)
+              <br />
+              Europa Galante, Fabio Biondi
+              <br />
+              Mozart,
+              <cite>Symphonies Nos 11, 13 & 30</cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              10/02-12/02 | Jeanne Lamon Hall, Trinity-St. Paul’s Centre,
+              Toronto (Canada)
+              <br />
+              Tafelmusik Baroque Orchestra, Rachel Podger (violin)
+              <br />
+              Mozart,
+              <cite>Violin Concerto No. 1</cite>
+              <br />
+              Haydn:
+              <cite>Symphonies Nos 43 + 49</cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              14/02 | Indiana University, Bloomington (USA)
+              <br />
+              Masterclass for the Natural Horn Studio of Richard Seraphinoff
+              <br />
+            </p>
+          </div>
+          <div class="project">
+            <p>
+              17/03 | Bozar, Brussels (Belgium)
+              <br />
+              Graindelavoix, Björn Schmelzer
+              <br />
+              Brumel,
+              <cite>Missa “Et ecce terrae motus”</cite>
+            </p>
+          </div>
+          <div class="project">
+            <p>
+              04/04-07/04 | Saintes (France)
+              <br />
+              Jeune Orchestre Atlantique Coach
+            </p>
+          </div>
+          <div class="project">
+            <p>
+              11/04 | Auditorium du Louvres, Paris (France)
+              <br />
+              Le Concert de la Loge, Julien Chauvin (violin)
+              <br />
+              Mozart:
+              <cite>Sinfonia Concertante + Symphony No. 40</cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              24/04 | Essen (Germany)
+              <br />
+              Anima Eterna Bruges, Jos van Immerseel, Joseph Moog (piano)
+              <br />
+              Liszt:
+              <cite>Piano Concerto No. 2 + Wandererfantasie</cite>
+              <br />
+              Schubert:
+              <cite>
+                Ouverture “Die Zauberharfe” + Symphony No. 8 “Unfinished”
+              </cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              05/05 | Tourcoing (France)
+              <br />
+              La Grande Écurie, Alexis Kossenko, Christian-Pierre La Marca
+              (cello)
+              <br />
+              Mendelssohn:
+              <cite>The Hebrides + Symphony No. 3 “Scottish”</cite>
+              <br />
+              Schumann,
+              <cite>Cello Concerto</cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              16/05 | Fundação Gulbenkian, Lisbon (Portugal)
+              <br />
+              18/05 | Kunstfestspiele Herrenhausen, Hannover (Germany)
+              <br />
+              20/05 | Muziekcentrum De Bijloke, Gent (Belgium)
+              <br />
+              Graindelavoix, Björn Schmelzer
+              <br />
+              Brumel,
+              <cite>Missa “Et ecce terrae motus”</cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              28/05 | Lévis (Canada)
+              <br />
+              Beethoven,
+              <cite>Sextet for 2 Horn and Strings Op. 81b</cite>
+              <br />
+              M. Haydn,
+              <cite>Romance for Horn and String Quartet</cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              29/05-03/06 | Domaine Forget, Saint-Irénée (Canada)
+              <br />
+              Masterclasses at the Domaine Forget International Music and Dance
+              Academy
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              03/05 | Domaine Forget, Saint-Irénée (Canada)
+              <br />
+              Brass Faculty Concert
+              <br />
+              Works by Ries and Dauprat
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              09/06 | Arnhem (Netherlands)
+              <br />
+              10/06 | Concertgebouw, Bruges (Belgium)
+              <br />
+              Anima Eterna Bruges, Midori Seiler, Laura Granero (piano)
+              <br />
+              Joachim,
+              <cite>Ouverture “in memoriam Heinrich von Kleist”</cite>
+              <br />
+              Schumann,
+              <cite>Piano Concerto</cite>
+              <br />
+              Scholtz,
+              <cite>Capriccio</cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              15/06 | Leipzig (Germany)
+              <br />
+              Europa Galante, Fabio Biondi
+              <br />
+              Bach,
+              <cite>Brandenburg Concerto No. 1</cite>
+              <br />
+              Vivaldi,
+              <cite>Dresden Concerti RV 562 + 569</cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              02/07 | Reims (France)
+              <br />
+              03-05/07 | Paris (recording)
+              <br />
+              La Grande Écurie, Alexis Kossenko, Christian-Pierre La Marca
+              (cello)
+              <br />
+              Mendelssohn:
+              <cite>The Hebrides + Symphony No. 3 “Scottish”</cite>
+              <br />
+              Schumann,
+              <cite>Cello Concerto</cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              24-29/07 | Montréal (Canada)
+              <br />
+              55th Symposium of the International Horn Society
+              <br />
+              Gallay,
+              <cite>Prélude non mesuré + Caprice</cite>
+              <br />
+              Ries,
+              <cite>Introduction and Rondo, Op. 113 No. 2</cite>
+              <br />
+              Hétu,
+              <cite>Lied</cite>
+              <br />
+              Beethoven,
+              <cite>Horn Sonata Op. 17</cite>
+              <br />
+              Anonymous,
+              <cite>Air varié</cite>
+              <br />
+              Natural Horn Masterclass
+              <br />
+              Natural Horn Competition
+              <br />
+              Conference
+              <cite>
+                “Twilight of Romanticism: National Differences in Horn
+                Performance Practice through the Medium of Early 20th Century
+                Recordings”
+              </cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              25/08 | Chopin Festival, Warsaw (Poland)
+              <br />
+              Europa Galante, Fabio Biondi
+              <br />
+              Moniuszko,
+              <cite>Paria</cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              27/08 | Elbphilharmonie Hamburg (Germany)
+              <br />
+              29/08 | Utrecht Early Music Festival (Netherlands)
+              <br />
+              10/09 | Musikfestival Bern (Switzerland)
+              <br />
+              Graindelavoix, Björn Schmelzer
+              <br />
+              Brumel,
+              <cite>Missa “Et ecce terrae motus”</cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              22-24/09 | Koerner Hall, Toronto (Canada)
+              <br />
+              Tafelmusik Baroque Orchestra, Bruno Weill
+              <br />
+              Beethoven:
+              <cite>Symphonie nos 4-5 + Ouverture Prometheus</cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              08/10 | Concertgebouw, Bruges (Belgium)
+              <br />
+              Anima Eterna Bruges, Midori Seiler, Laura Granero (piano)
+              <br />
+              Joachim,
+              <cite>Ouverture “in memoriam Heinrich von Kleist”</cite>
+              <br />
+              Schumann,
+              <cite>Piano Concerto</cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              14-15/10 | Blaibach Konzerthaus (Germany)
+              <br />
+              Das Neue Orchester, Christoph Spering
+              <br />
+              Beethoven,
+              <cite>Symphony No. 5</cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              01/11 | Gürzenich Cologne (Germany)
+              <br />
+              Das Neue Orchester, Christoph Spering
+              <br />
+              Reger,
+              <cite>Variations and Fugue on a Theme by Hiller, Op. 100</cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              23/11 | Leiden (The Netherlands)
+              <br />
+              24/11 | Utrecht
+              <br />
+              Orchestra of the 18th Century, Bertie Baignet, Olga Pashchenko
+              (piano)
+              <br />
+              Beethoven:
+              <cite>Ouverture Coriolan + Symphony No. 4</cite>
+              <br />
+              Clara Schumann,
+              <cite>Piano Concerto</cite>
+              <br />
+              E. Mayer,
+              <cite>Ouverture in D</cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              20/12 | Nicolaikerk, Appingedam (Netherlands)
+              <br />
+              21/12 | Grote kerk, Leeuwarden
+              <br />
+              22/12 | Akerk, Groningen
+              <br />
+              23/12 | Dordrecht
+              <br />
+              24/12 | Martinikerk, Doesburg
+              <br />
+              Luthers Bach Ensemble, Tyman-Jan Bronda
+              <br />
+              Bach,
+              <cite>Mass in B Minor</cite>
+            </p>
+          </div>
+
+          <div class="project">
+            <p>
+              31/12 | Tonhalle, Düsseldorf (Germany)
+              <br />
+              Das Neue Orchestre, Christoph Spering
+              <br />
+              Beethoven,
+              <cite>Symphony No. 9</cite>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+  </body>
 </html>

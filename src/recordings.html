@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- do not remove this line! -->
+    <title>Pierre-Antoine Tremblay</title>
+  </head>
+  <body>
+    <div class="main-hero recordings-hero">
+      <include src="./views/main-nav.html"></include>
+      <h1 class="main-hero__title recordings-hero__title">Recordings</h1>
+    </div>
+
+    <section id="recordings">
+      <div class="container">
+        <div class="solo-container">
+          <picture>
+            <source
+              srcset="
+                ./assets/images/recordings/dialoghi.jpg?as=webp&width=400 400w,
+                ./assets/images/recordings/dialoghi.jpg?as=webp&width=800 800w
+              "
+              sizes="(max-width: 600px) 400px, 800px"
+              type="image/webp"
+            />
+            <img
+              src="./assets/images/recordings/dialoghi.jpg"
+              srcset="
+                ./assets/images/recordings/dialoghi.jpg?width=400 400w,
+                ./assets/images/recordings/dialoghi.jpg?width=800 800w
+              "
+              sizes="(max-width: 600px) 400px, 800px"
+              alt="Ensemble Dialoghi"
+              class="solo-recording"
+              loading="lazy"
+            />
+          </picture>
+          <picture>
+            <source
+              srcset="
+                ./assets/images/recordings/dialoghi-heads.gif?as=webp&width=400 400w,
+                ./assets/images/recordings/dialoghi-heads.gif?as=webp&width=800 800w
+              "
+              sizes="(max-width: 600px) 400px, 800px"
+              type="image/webp"
+            />
+            <img
+              src="./assets/images/recordings/dialoghi-heads.gif"
+              srcset="
+                ./assets/images/recordings/dialoghi-heads.gif?width=400 400w,
+                ./assets/images/recordings/dialoghi-heads.gif?width=800 800w
+              "
+              sizes="(max-width: 600px) 400px, 800px"
+              alt="Ensemble Dialoghi Gif"
+              class="solo-recording"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+        <div class="recordings-grid" id="recordings-container"></div>
+      </div>
+    </section>
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+  </body>
+</html>

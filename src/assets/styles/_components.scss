@@ -3,23 +3,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 5px 30px;
   color: #fff;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.8
-  ); /* Set the background color with transparency */
-  position: fixed; /* Fix the header at the top */
-  top: 0; /* Position it at the top of the viewport */
-  width: 100%; /* Span the full width of the screen */
-  z-index: 2; /* Ensure the header is above other content */
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    /* Fully black at the top */ rgba(0, 0, 0, 0)
+      /* Completely transparent at the bottom */
+  );
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  transition: background-image 1s ease; /* Add a smooth transition */
+  text-transform: uppercase;
+  font-size: $font-size-small;
+  font-weight: 600;
 }
 
 /* Slogan styles */
 .header__slogan {
-  font-size: 1.2rem;
+  font-size: $font-size-small;
+  font-weight: 600;
 }
 
 /* Main navigation styles */
@@ -34,7 +39,10 @@
 }
 
 .main-nav__item {
-  margin-left: 40px;
+  display: flex; /* Use flex display for positioning */
+  align-items: center; /* Align items vertically */
+  margin-left: 20px;
+  position: relative; /* Add position relative for pseudo-element */
 }
 
 .main-nav__link {
@@ -46,4 +54,42 @@
 /* Position the menu at the top right corner */
 .main-nav {
   margin-left: auto;
+}
+
+.main-nav__item::before {
+  content: "\25C6"; /* Unicode character for a diamond */
+  color: rgba(187, 187, 187, 0.337);
+  margin-right: 20px; /* Add margin to separate the icon from the text */
+  display: inline-block; /* Add this to make the icon inline with the text */
+  margin-bottom: 3px;
+}
+
+.main-nav__item:first-child::before {
+  content: "";
+}
+
+// Scrolling
+#videos,
+#biography,
+#photos {
+  scroll-margin-top: 76px; /* Adjust the offset value as needed */
+}
+
+// Links
+a {
+  color: $color-primary;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.3s ease;
+}
+
+a:hover {
+  color: $color-secondary;
+  border-bottom-color: $color-secondary; /* Change the hover border color as needed */
+  transition: color 0.3s ease;
+}
+
+.main-nav__link:hover {
+  border-bottom: none;
+  color: #bdbdbd;
 }
