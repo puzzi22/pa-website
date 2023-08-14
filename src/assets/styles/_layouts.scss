@@ -28,7 +28,7 @@
   background-repeat: no-repeat;
   background-position: center center; // To center the image on desktops
   background-size: cover; // To make sure the off-centering doesn't leave a blank space on the right side
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 
   @media (max-width: $breakpoint-mobile) {
     background-position: calc(50% - 25px) 50%; // To center the hero image on smaller devices
@@ -128,14 +128,31 @@
 }
 
 .year-menu {
-  width: 50vw;
+  width: 30vw;
   margin: 0 auto 6rem auto;
 }
 
 .lang-menu__item,
 .year-menu__item {
-  margin: 0 30px; /* Add spacing between items */
-  font-size: $font-size-base; /* Adjust font size as needed */
+  margin-left: 20px; /* Add spacing between items */
+  font-size: 16px; /* Adjust font size as needed */
+}
+
+.lang-menu__item::before {
+  content: "\25C6"; /* Unicode character for a diamond */
+  color: $color-primary;
+  margin-right: 20px; /* Add margin to separate the icon from the text */
+  display: inline-block; /* Add this to make the icon inline with the text */
+  margin-bottom: 3px;
+  font-size: 16px;
+}
+
+.lang-menu__item:first-child {
+  margin-left: 0;
+}
+
+.lang-menu__item:first-child::before {
+  content: "";
 }
 
 /* Add a transition for opacity and visibility changes */
@@ -151,6 +168,14 @@
   opacity: 1;
   visibility: visible;
   display: block;
+}
+
+#biography {
+  margin-bottom: 80px;
+}
+
+#photos {
+  margin-bottom: 60px;
 }
 
 /* ------------------------------------ *\
@@ -326,7 +351,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #0152a8;
 }
 
 /* ------------------------------------ *\
