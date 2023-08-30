@@ -1,141 +1,20 @@
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
 /* ------------------------------------ *\
-   HERO SECTION
+   BIOGRAPHY SECTION
 \* ------------------------------------ */
 
-.main-hero {
-  position: relative;
-  z-index: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  height: 100vh;
-  min-height: 100vh; /* Use min-height to ensure it spans the whole viewport */
-  padding: 0 20px 20px;
-  color: #fff;
-  background-image: url("../images/bg-hero.jpg?as=webp");
-  background-repeat: no-repeat;
-  background-position: center center; // To center the image on desktops
-  background-size: cover; // To make sure the off-centering doesn't leave a blank space on the right side
-  margin-bottom: 30px;
-
-  @media (max-width: $breakpoint-mobile) {
-    background-position: calc(50% - 25px) 50%; // To center the hero image on smaller devices
-    background-size: cover;
-  }
-}
-
-.agenda-hero,
-.contact-hero,
-.recordings-hero {
-  min-height: 70vh;
-  height: 70vh;
-}
-
-.agenda-hero {
-  background-image: url("../images/agenda-hero.jpg?as=webp");
-  background-position: top center;
-}
-
-.recordings-hero {
-  background-image: url("../images/recordings-hero.jpg?as=webp");
-  background-position: top center;
-}
-
-.contact-hero {
-  background-image: url("../images/contact-hero.jpg?as=webp");
-  background-position: bottom center;
-}
-
-.main-hero::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  content: "";
-  background-image: linear-gradient(to bottom, transparent, rgb(0, 0, 0, 1));
-
-  @media (max-width: $breakpoint-mobile) {
-    background-image: linear-gradient(
-      to bottom,
-      rgb(0, 0, 0, 0.4),
-      rgb(0, 0, 0, 0.8)
-    ); // To make the text more visible on small devices
-  }
-}
-
-.main-hero__title {
-  order: 2;
-  font-size: $font-size-extra-large;
-  line-height: 1;
-  margin-bottom: 120px;
-
-  @media (max-width: $breakpoint-mobile) {
-    margin-bottom: 115px;
-  }
-}
-
-.agenda-hero__title,
-.recordings-hero__title,
-.contact-hero__title  {
-  margin-bottom: 60px;
-}
-
-// .uoc-title {
-//   font-family: $font-family-serif;
-//   font-size: 24px;
-//   font-weight: 700;
-//   color: $uoc-corporate;
-
-//   @media (min-width: $mqMinWidth) {
-//     font-size: 36px;
-//   }
-// }
-
-.container {
-  margin: 0 10%;
-  font-size: $font-size-base;
-  line-height: 1.8;
-}
-
-.section__title {
-  text-align: center;
-}
-
-.lang-menu,
-.year-menu {
+.lang-menu {
   display: flex;
   flex-wrap: wrap;
-  //   flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
+  align-items: center;
+  justify-content: center;
   margin-bottom: 3rem;
-  padding: 0; /* Reset default padding */
-  list-style: none; /* Remove default list styles */
+  padding: 0;
+  list-style: none;
 }
 
-.year-menu {
-  width: 30vw;
-  margin: 0 auto 6rem auto;
-}
-
-.lang-menu__item,
-.year-menu__item {
-  margin-left: 20px; /* Add spacing between items */
-  font-size: 16px; /* Adjust font size as needed */
+.lang-menu__item {
+  margin-left: 20px;
+  font-size: 16px;
 }
 
 .lang-menu__item::before {
@@ -155,8 +34,7 @@
   content: "";
 }
 
-/* Add a transition for opacity and visibility changes */
-.content-block {
+.biography {
   opacity: 0;
   visibility: hidden;
   display: none; /* Add this line */
@@ -164,7 +42,7 @@
 }
 
 /* Apply the "visible" class to show the content */
-.content-block.visible {
+.biography.visible {
   opacity: 1;
   visibility: visible;
   display: block;
@@ -174,57 +52,56 @@
   margin-bottom: 80px;
 }
 
-#photos {
-  margin-bottom: 60px;
-}
-
 /* ------------------------------------ *\
-   PHOTO SECTIONS LAYOUT
+   PHOTO SECTION
 \* ------------------------------------ */
 
-.photo-section--horizontal {
+.photo-section {
   display: grid;
-  grid-template-rows: repeat(1, 1fr);
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat (1, 1fr);
+  grid-template-columns: 4, 1fr;
   width: 100%;
   gap: 5px;
-  margin-bottom: 5px;
-
-  @media (max-width: $breakpoint-mobile) {
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(1, 1fr);
-    gap: 0;
-  }
 }
 
-.photo-section--vertical {
-  display: grid;
-  grid-template-rows: repeat(1, 1fr);
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
-  width: 100%;
-
-  @media (max-width: $breakpoint-mobile) {
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-  }
-}
-
-.photo-section__img {
+.photo-section__img,
+.recording-section__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/* First Row: Two pictures taking each half the space available */
+.photo-section__link:nth-child(1) {
+  grid-column: span 2;
+  grid-row: 1;
+}
+.photo-section__link:nth-child(2) {
+  grid-column: span 2;
+  grid-row: 1;
+}
+
+/* Second Row: Four as each taking a quarter of the space */
+.photo-section__link:nth-child(3),
+.photo-section__link:nth-child(4),
+.photo-section__link:nth-child(5),
+.photo-section__link:nth-child(6) {
+  grid-column: span 1;
+  grid-row: 2;
+}
+
+#photos {
+  margin-bottom: 60px;
+}
+
 /* ------------------------------------ *\
-   MUSIC SECTION
+   VIDEO SECTION
 \* ------------------------------------ */
 
-.music-section__video {
-  display: grid; /* Use grid for flexible layout */
+.video-section {
+  display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 20px; /* Gap between items */
+  gap: 20px;
 
   @media (max-width: $breakpoint-mobile) {
     grid-template-columns: 1fr; /* Stacking on mobile phones */
@@ -236,7 +113,7 @@
   margin-bottom: 100px;
 }
 
-.music-section__video--for-media-query {
+.video-section--for-media-query {
   width: 100%;
   max-width: 560px;
   height: 315px;
@@ -252,13 +129,39 @@ iframe {
 }
 
 /* ------------------------------------ *\
-   RECORDINGS
+   AGENDA PAGE
+\* ------------------------------------ */
+
+.cancelled {
+  text-decoration: line-through;
+}
+
+.projects {
+  margin: auto 10%;
+}
+
+.year-menu {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Create 5 equal columns */
+  grid-gap: 10px;
+  width: 40%;
+  margin: 0 auto 6rem auto;
+  list-style: none;
+  padding: 0;
+}
+
+.year-menu__item {
+  font-size: 16px;
+}
+
+/* ------------------------------------ *\
+   RECORDINGS PAGE
 \* ------------------------------------ */
 
 .recordings-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 pictures in each row */
-  gap: 10px; /* Adjust the gap between images as needed */
+  gap: 10px;
   width: 80%;
   margin: 0 auto;
 }
@@ -294,23 +197,23 @@ iframe {
   object-fit: cover;
 }
 
-.solo-recording {
+.solo-container__img {
   width: 100%; /* Make sure the images fill the picture containers */
 }
 
 /* ------------------------------------ *\
-   CONTACT
+   CONTACT PAGE
 \* ------------------------------------ */
 
-form {
+.contact-form {
   margin-top: 20px;
   width: 50%;
   margin: 0 auto;
 }
 
-.form-group {
-  display: grid; /* Change to grid */
-  grid-template-columns: 20% auto; /* Adjust columns based on your layout */
+.contact-form__group {
+  display: grid;
+  grid-template-columns: 20% auto;
   align-items: flex-start;
   margin-bottom: 20px;
 }
@@ -323,8 +226,8 @@ label {
 
 input[type="text"],
 input[type="email"],
-textarea {
-  width: 100%; /* Adjust width for the input fields */
+.message-area {
+  width: 100%;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.1);
   border: none;
@@ -332,12 +235,12 @@ textarea {
   color: white;
 }
 
-textarea {
+.message-area {
   resize: vertical;
   min-height: 150px;
 }
 
-button[type="submit"] {
+.submit-button {
   background-color: #0071eb;
   color: white;
   border: none;
@@ -351,21 +254,6 @@ button[type="submit"] {
   font-size: 16px;
 }
 
-button[type="submit"]:hover {
+.submit-button:hover {
   background-color: #0167d3;
-}
-
-/* ------------------------------------ *\
-   FOOTER
-\* ------------------------------------ */
-
-.footer {
-  //   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  margin: 1.5rem 0;
-  padding: 1rem;
-  font-size: $font-size-small;
-  text-align: center;
 }
