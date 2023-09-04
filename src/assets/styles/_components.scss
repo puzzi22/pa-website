@@ -196,6 +196,7 @@
   align-items: center;
   margin-left: 20px;
   position: relative; /* Add position relative for pseudo-element */
+  height: 27px; /* To make sure last item has the same height as the rest */
 
   @media (max-width: $breakpoint-mobile) {
     display: block;
