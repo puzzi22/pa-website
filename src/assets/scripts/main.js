@@ -71,3 +71,9 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
+
+// Function for "Back to Top" button
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
