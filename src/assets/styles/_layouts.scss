@@ -19,7 +19,7 @@
 
 .lang-menu__item::before {
   content: "\25C6"; /* Unicode character for a diamond */
-  color: $color-primary;
+  color: $color-secondary;
   margin-right: 20px; /* Add margin to separate the icon from the text */
   display: inline-block; /* Add this to make the icon inline with the text */
   margin-bottom: 3px;
@@ -58,10 +58,16 @@
 
 .photo-section {
   display: grid;
-  grid-template-rows: repeat (1, 1fr);
-  grid-template-columns: 4, 1fr;
+  grid-template-rows: auto repeat(1, 1fr); /* First row auto, remaining 2 rows take up remaining space */
+  grid-template-columns: repeat(4, 1fr);
   width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
   gap: 5px;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+  }
 }
 
 .photo-section__img,
@@ -72,22 +78,27 @@
 }
 
 /* First Row: Two pictures taking each half the space available */
-.photo-section__link:nth-child(1) {
-  grid-column: span 2;
-  grid-row: 1;
-}
+.photo-section__link:nth-child(1),
 .photo-section__link:nth-child(2) {
   grid-column: span 2;
-  grid-row: 1;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-column: span 1; /* Each picture takes full width on small screens */
+    grid-row: 1; /* Both are on the first row */
+  }
 }
 
-/* Second Row: Four as each taking a quarter of the space */
+/* Second and Third Rows: Four pictures each taking a quarter of the space */
 .photo-section__link:nth-child(3),
 .photo-section__link:nth-child(4),
 .photo-section__link:nth-child(5),
 .photo-section__link:nth-child(6) {
   grid-column: span 1;
-  grid-row: 2;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-column: span 1;
+    grid-row: auto; /* Let the browser automatically place items */
+  }
 }
 
 #photos {
@@ -105,7 +116,7 @@
 
   @media (max-width: $breakpoint-mobile) {
     grid-template-columns: 1fr; /* Stacking on mobile phones */
-    gap: 0; /* No gap on mobile */
+    gap: 30px;
   }
 
   align-items: center;
@@ -138,16 +149,25 @@ iframe {
 
 .projects {
   margin: auto 10%;
+
+  @media (max-width: $breakpoint-mobile) {
+    margin: auto 5%;
+  }
 }
 
 .year-menu {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* Create 5 equal columns */
-  grid-gap: 10px;
+  grid-gap: 20px;
   width: 40%;
   margin: 0 auto 6rem auto;
   list-style: none;
   padding: 0;
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 75%;
+    line-height: 3;
+  }
 }
 
 .year-menu__item {
@@ -164,6 +184,13 @@ iframe {
   gap: 10px;
   width: 80%;
   margin: 0 auto;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    gap: 0;
+    column-gap: 10px;
+  }
 }
 
 .recordings-grid picture,
@@ -182,6 +209,10 @@ iframe {
   margin: 0 auto;
   margin-bottom: 40px;
   gap: 10px;
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 90%;
+  }
 }
 
 .solo-container picture {
@@ -204,6 +235,10 @@ iframe {
 /* ------------------------------------ *\
    CONTACT PAGE
 \* ------------------------------------ */
+
+#contact .container {
+  max-width: 1000px;
+}
 
 .contact-form {
   margin-top: 20px;

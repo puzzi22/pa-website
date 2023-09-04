@@ -1,23 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const langMenuItems = document.querySelectorAll(".lang-menu__item");
-  const contentBlocks = document.querySelectorAll(".content-block");
-
-  langMenuItems.forEach((menuItem) => {
-    menuItem.addEventListener("click", function (event) {
-      event.preventDefault(); // Prevent the default link behavior
-
-      const selectedLang = this.getAttribute("data-lang");
-
-      contentBlocks.forEach((block) => {
-        block.classList.remove("visible");
-        if (block.classList.contains(`bio-${selectedLang}`)) {
-          block.classList.add("visible");
-        }
-      });
-    });
-  });
-});
-
 import img1 from "../images/recordings/1.png";
 import img10 from "../images/recordings/10.jpg";
 import img11 from "../images/recordings/11.jpg";

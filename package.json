@@ -45,7 +45,6 @@
     "sharp": "0.31.1"
   },
   "dependencies": {
-    "bigger-picture": "^1.1.11",
     "photoswipe": "^5.3.8"
   }
 }

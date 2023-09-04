@@ -14,3 +14,7 @@ body {
   background-color: $color-bg;
   color: $color-secondary;
 }
+
+html {
+  scroll-behavior: smooth;
+}

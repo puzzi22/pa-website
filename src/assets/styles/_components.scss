@@ -20,8 +20,7 @@
   margin-bottom: 30px;
 
   @media (max-width: $breakpoint-mobile) {
-    background-position: calc(50% - 25px) 50%; // To center the hero image on smaller devices
-    background-size: cover;
+    padding: 0 0;
   }
 }
 
@@ -74,6 +73,7 @@
   font-size: $font-size-extra-large;
   line-height: 1;
   margin-bottom: 120px;
+  text-align: center;
 
   @media (max-width: $breakpoint-mobile) {
     margin-bottom: 115px;
@@ -91,9 +91,15 @@
 \* ------------------------------------ */
 
 .container {
-  margin: 0 10%;
+  margin: 0 auto;
+  padding: 0 15%;
   font-size: $font-size-base;
   line-height: 1.8;
+  max-width: 1440px;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0 5%;
+  }
 }
 
 .section__title {
@@ -106,7 +112,6 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 5px 30px;
   color: #fff;
@@ -124,52 +129,155 @@
   text-transform: uppercase;
   font-size: $font-size-small;
   font-weight: 600;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 5px 0;
+  }
 }
 
 /* Slogan styles */
-.header__slogan {
+.topnav__slogan {
   font-size: $font-size-small;
   font-weight: 600;
+  width: auto;
+  max-width: 40vw;
+  min-width: 30vw;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $breakpoint-mobile) {
+    max-width: 80vw;
+    text-align: center;
+  }
 }
 
 /* ------------------------------------ *\
    MAIN NAVIGATION
 \* ------------------------------------ */
 
-.main-nav {
+.topnav {
   display: flex;
   align-items: center;
-  margin-left: auto;
+  overflow: hidden;
+  z-index: 2;
+  justify-content: space-between;
+  position: relative;
+  width: 100vw;
+  margin-top: 20px;
+  margin-bottom: 100px;
+
+  @media (max-width: $breakpoint-mobile) {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 15px 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
-.main-nav__list {
+.nav-list {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end; /* Right-align the items */
+  margin: 0;
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    justify-content: flex-start; /* Reset to default on mobile */
+    padding-left: 0;
+    line-height: 2.5;
+    margin-top: 20px;
+  }
 }
 
-.main-nav__item {
-  display: flex;
+.topnav__item {
+  display: inline-block;
   align-items: center;
   margin-left: 20px;
   position: relative; /* Add position relative for pseudo-element */
+
+  @media (max-width: $breakpoint-mobile) {
+    display: block;
+  }
 }
 
-.main-nav__link {
+.topnav__link,
+.topnav button {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
+  float: left;
+  display: block;
+  text-align: center;
 }
 
-.main-nav__item::before {
+.topnav__link {
+  @media (max-width: $breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.topnav__item::before {
   content: "\25C6"; /* Unicode character for a diamond */
   color: rgba(187, 187, 187, 0.337);
-  margin-right: 20px;
+  margin-left: 20px;
   display: inline-block; /* Add this to make the icon inline with the text */
   margin-bottom: 3px;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: none;
+  }
 }
 
-.main-nav__item:first-child::before {
-  content: "";
+.topnav__item:last-child::before,
+.topnav__item:nth-last-child(2)::before {
+  display: none;
+}
+
+// Responsive Top Nav
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media (max-width: $breakpoint-mobile) {
+  .topnav.responsive {
+    position: relative;
+    flex-direction: column;
+    padding-bottom: 1rem;
+  }
+
+  .icon-button {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: center;
+    border-bottom: none;
+  }
+}
+
+// Button
+button {
+  border: 0;
+  background-color: inherit;
+}
+
+.icon svg {
+  width: 2rem;
+  height: 2rem;
+  fill: rgb(255, 255, 255);
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+
+  @media (max-width: $breakpoint-mobile) {
+    float: right;
+    display: block;
+  }
 }
 
 // Scrolling
@@ -186,13 +294,13 @@
 a {
   color: $color-primary;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-bottom 0.3s ease;
+  // border-bottom: 1px solid transparent;
+  transition: color 0.3s ease;
 }
 
 a:hover {
   color: $color-secondary;
-  border-bottom-color: $color-secondary;
+  // border-bottom-color: $color-secondary;
   transition: color 0.3s ease;
 }
 
@@ -201,12 +309,41 @@ a.active:hover {
   color: $color-secondary;
   font-weight: 600;
   cursor: default;
-  border-bottom: none;
+  // border-bottom: none;
 }
 
 .main-nav__link:hover {
-  border-bottom: none;
+  // border-bottom: none;
   color: #bdbdbd;
+}
+
+/* ------------------------------------ *\
+   BUTTONS
+\* ------------------------------------ */
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #666;
+  color: white;
+  fill: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+#myBtn:hover {
+  background-color: $color-primary;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
 }
 
 /* ------------------------------------ *\
