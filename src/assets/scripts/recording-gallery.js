@@ -1,48 +1,48 @@
-import img1 from "../images/recordings/1.png";
-import img10 from "../images/recordings/10.jpg";
-import img11 from "../images/recordings/11.jpg";
-import img12 from "../images/recordings/12.jpg";
-import img13 from "../images/recordings/13.jpg";
-import img14 from "../images/recordings/14.jpg";
-import img15 from "../images/recordings/15.jpg";
-import img16 from "../images/recordings/16.jpg";
-import img17 from "../images/recordings/17.jpg";
-import img18 from "../images/recordings/18.jpg";
-import img19 from "../images/recordings/19.jpg";
-import img2 from "../images/recordings/2.png";
-import img20 from "../images/recordings/20.jpg";
-import img21 from "../images/recordings/21.png";
-import img22 from "../images/recordings/22.jpg";
-import img23 from "../images/recordings/23.jpg";
-import img24 from "../images/recordings/24.jpg";
-import img25 from "../images/recordings/25.jpg";
-import img26 from "../images/recordings/26.jpeg";
-import img27 from "../images/recordings/27.jpeg";
-import img28 from "../images/recordings/28.png";
-import img29 from "../images/recordings/29.jpg";
-import img3 from "../images/recordings/3.png";
-import img30 from "../images/recordings/30.jpg";
-import img31 from "../images/recordings/31.jpg";
-import img32 from "../images/recordings/32.jpg";
-import img33 from "../images/recordings/33.jpg";
-import img34 from "../images/recordings/34.jpg";
-import img35 from "../images/recordings/35.jpg";
-import img36 from "../images/recordings/36.jpeg";
-import img37 from "../images/recordings/37.jpg";
-import img38 from "../images/recordings/38.png";
-import img39 from "../images/recordings/39.jpg";
-import img4 from "../images/recordings/4.jpg";
-import img40 from "../images/recordings/40.jpg";
-import img41 from "../images/recordings/41.jpeg";
-import img42 from "../images/recordings/42.jpg";
-import img43 from "../images/recordings/43.jpg";
-import img44 from "../images/recordings/44.jpg";
-import img45 from "../images/recordings/45.png";
-import img5 from "../images/recordings/5.jpg";
-import img6 from "../images/recordings/6.jpg";
-import img7 from "../images/recordings/7.jpg";
-import img8 from "../images/recordings/8.jpg";
-import img9 from "../images/recordings/9.jpg";
+import img1 from "../images/recordings/1.webp";
+import img10 from "../images/recordings/10.webp";
+import img11 from "../images/recordings/11.webp";
+import img12 from "../images/recordings/12.webp";
+import img13 from "../images/recordings/13.webp";
+import img14 from "../images/recordings/14.webp";
+import img15 from "../images/recordings/15.webp";
+import img16 from "../images/recordings/16.webp";
+import img17 from "../images/recordings/17.webp";
+import img18 from "../images/recordings/18.webp";
+import img19 from "../images/recordings/19.webp";
+import img2 from "../images/recordings/2.webp";
+import img20 from "../images/recordings/20.webp";
+import img21 from "../images/recordings/21.webp";
+import img22 from "../images/recordings/22.webp";
+import img23 from "../images/recordings/23.webp";
+import img24 from "../images/recordings/24.webp";
+import img25 from "../images/recordings/25.webp";
+import img26 from "../images/recordings/26.webp";
+import img27 from "../images/recordings/27.webp";
+import img28 from "../images/recordings/28.webp";
+import img29 from "../images/recordings/29.webp";
+import img3 from "../images/recordings/3.webp";
+import img30 from "../images/recordings/30.webp";
+import img31 from "../images/recordings/31.webp";
+import img32 from "../images/recordings/32.webp";
+import img33 from "../images/recordings/33.webp";
+import img34 from "../images/recordings/34.webp";
+import img35 from "../images/recordings/35.webp";
+import img36 from "../images/recordings/36.webp";
+import img37 from "../images/recordings/37.webp";
+import img38 from "../images/recordings/38.webp";
+import img39 from "../images/recordings/39.webp";
+import img4 from "../images/recordings/4.webp";
+import img40 from "../images/recordings/40.webp";
+import img41 from "../images/recordings/41.webp";
+import img42 from "../images/recordings/42.webp";
+import img43 from "../images/recordings/43.webp";
+import img44 from "../images/recordings/44.webp";
+import img45 from "../images/recordings/45.webp";
+import img5 from "../images/recordings/5.webp";
+import img6 from "../images/recordings/6.webp";
+import img7 from "../images/recordings/7.webp";
+import img8 from "../images/recordings/8.webp";
+import img9 from "../images/recordings/9.webp";
 
 // Get a reference to the recordings container
 const recordingsContainer = document.getElementById("recordings-container");
@@ -96,21 +96,29 @@ const imageFilenames = [
   img1,
 ];
 
-// Loop through the image filenames and generate <picture> elements
 for (const imgPath of imageFilenames) {
   const pictureElement = document.createElement("picture");
 
+  // Remove the origin part of the URL
+  const cleanImgPath = imgPath.replace("http://localhost:8123/", "");
+
+  // Generate the source set for WebP
+  const webpSrcSet = `${cleanImgPath} 400w, ${cleanImgPath} 800w`;
+
+  // Generate the source set for the original format
+  const imgSrcSet = `${cleanImgPath} 400w, ${cleanImgPath} 800w`;
+
   const sourceElement = document.createElement("source");
-  sourceElement.srcset = `${imgPath}?as=webp&width=400 400w, ${imgPath}?as=webp&width=800 800w`;
+  sourceElement.srcset = webpSrcSet;
   sourceElement.sizes = "(max-width: 600px) 400px, 800px";
   sourceElement.type = "image/webp";
 
   const imgElement = document.createElement("img");
-  imgElement.src = imgPath;
-  imgElement.srcset = `${imgPath}?width=400 400w, ${imgPath}?width=800 800w`;
+  imgElement.src = cleanImgPath; // Substitute with the appropriate path if needed
+  imgElement.srcset = imgSrcSet;
   imgElement.sizes = "(max-width: 600px) 400px, 800px";
-  imgElement.alt = `Recording ${imgPath}`;
-  imgElement.className = "recording-section__img";
+  imgElement.alt = `Recording`; // Substitute with a dynamic description if needed
+  imgElement.className = "recording-section__img"; // Adjust the class name as needed
   imgElement.loading = "lazy";
 
   pictureElement.appendChild(sourceElement);
