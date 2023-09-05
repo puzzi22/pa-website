@@ -101,6 +101,10 @@
   @media (max-width: $breakpoint-mobile) {
     padding: 0 5%;
   }
+
+  @media (min-width: 1500px) {
+    max-width: 2000px;
+  }
 }
 
 .section__title {
@@ -170,8 +174,7 @@
   position: relative;
   width: 100vw;
   max-width: 2000px;
-  margin-top: 20px;
-  margin-bottom: 100px;
+  margin: 20px auto 100px auto;
 
   @media (max-width: $breakpoint-mobile) {
     background-color: rgba(0, 0, 0, 0.9);
