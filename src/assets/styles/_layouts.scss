@@ -10,6 +10,11 @@
   margin-bottom: 3rem;
   padding: 0;
   list-style: none;
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    line-height: 3;
+  }
 }
 
 .lang-menu__item {
@@ -24,6 +29,10 @@
   display: inline-block; /* Add this to make the icon inline with the text */
   margin-bottom: 3px;
   font-size: 16px;
+
+  @media (max-width: $breakpoint-mobile) {
+    content: none;
+  }
 }
 
 .lang-menu__item:first-child {
@@ -187,7 +196,7 @@ iframe {
 
   @media (max-width: $breakpoint-mobile) {
     grid-template-columns: repeat(2, 1fr);
-    width: 90%;
+    width: 100%;
     gap: 0;
     column-gap: 10px;
   }
@@ -251,12 +260,21 @@ iframe {
   grid-template-columns: 20% auto;
   align-items: flex-start;
   margin-bottom: 20px;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 label {
   font-weight: bold;
   text-align: right;
   margin-right: 30px;
+
+  @media (max-width: $breakpoint-mobile) {
+    margin-right: 0;
+    text-align: left;
+  }
 }
 
 input[type="text"],
@@ -287,6 +305,10 @@ input[type="email"],
   grid-column: 2; /* Place the button in the second column */
   width: 30%;
   font-size: 16px;
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+  }
 }
 
 .submit-button:hover {

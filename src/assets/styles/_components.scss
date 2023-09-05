@@ -77,6 +77,7 @@
 
   @media (max-width: $breakpoint-mobile) {
     margin-bottom: 115px;
+    font-size: 45px;
   }
 }
 
@@ -144,9 +145,10 @@
   min-width: 30vw;
   display: flex;
   align-items: center;
+  text-align: left;
 
   @media (max-width: $breakpoint-mobile) {
-    max-width: 80vw;
+    max-width: 70vw;
     text-align: center;
   }
 }
@@ -168,7 +170,7 @@
 
   @media (max-width: $breakpoint-mobile) {
     background-color: rgba(0, 0, 0, 0.9);
-    padding: 15px 30px;
+    padding: 0 5vw;
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -186,8 +188,8 @@
     flex-direction: column;
     justify-content: flex-start; /* Reset to default on mobile */
     padding-left: 0;
-    line-height: 2.5;
     margin-top: 20px;
+    gap: 20px;
   }
 }
 
@@ -197,10 +199,10 @@
   margin-left: 20px;
   position: relative; /* Add position relative for pseudo-element */
   height: 27px; /* To make sure last item has the same height as the rest */
+}
 
-  @media (max-width: $breakpoint-mobile) {
-    display: block;
-  }
+.topnav__item {
+  display: none;
 }
 
 .topnav__link,
@@ -211,12 +213,6 @@
   float: left;
   display: block;
   text-align: center;
-}
-
-.topnav__link {
-  @media (max-width: $breakpoint-mobile) {
-    display: none;
-  }
 }
 
 .topnav__item::before {
@@ -246,6 +242,7 @@
   }
 
   .icon-button {
+    display: block;
     position: absolute;
     top: 8px;
     right: 5px;
@@ -256,6 +253,10 @@
     display: block;
     text-align: center;
     border-bottom: none;
+  }
+
+  .topnav.responsive .topnav__item {
+    display: block;
   }
 }
 
