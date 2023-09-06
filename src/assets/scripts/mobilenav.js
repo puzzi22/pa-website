@@ -6,3 +6,11 @@ function toggleMobileNav() {
     x.className = "topnav";
   }
 }
+
+// To close the menu upon clicking on a link
+document.addEventListener("DOMContentLoaded", function () {
+  var navLinks = document.querySelectorAll(".nav-toggle");
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", toggleMobileNav);
+  });
+});

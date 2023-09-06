@@ -193,6 +193,7 @@
   align-items: center;
   justify-content: flex-end; /* Right-align the items */
   margin: 0;
+  gap: 10px;
 
   @media (max-width: $breakpoint-mobile) {
     flex-direction: column;
