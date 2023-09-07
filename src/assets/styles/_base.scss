@@ -13,6 +13,7 @@ body {
   line-height: 24px;
   background-color: $color-bg;
   color: $color-secondary;
+  scroll-behavior: smooth;
 
   @media (max-width: $breakpoint-mobile) {
     font-size: 15px;
