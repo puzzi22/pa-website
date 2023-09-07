@@ -1,21 +1,18 @@
 function toggleMobileNav(closeOnly = false) {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    if (!closeOnly) {
-      // Only add "responsive" if closeOnly is false
-      x.className += " responsive";
-    }
+  const x = document.getElementById("myTopnav");
+  if (closeOnly) {
+    x.classList.remove("responsive");
+    return;
+  }
+  if (x.classList.contains("responsive")) {
+    x.classList.remove("responsive");
   } else {
-    x.className = "topnav";
+    x.classList.add("responsive");
   }
 }
 
-// To close the menu upon clicking on a link
-document.addEventListener("DOMContentLoaded", function () {
-  var navLinks = document.querySelectorAll(".nav-toggle");
-  navLinks.forEach(function (link) {
-    link.addEventListener("click", function () {
-      toggleMobileNav(true); // Pass true to only close the menu
-    });
+document.querySelectorAll(".topnav__link").forEach(function (link) {
+  link.addEventListener("click", function () {
+    toggleMobileNav(true);
   });
 });
