@@ -1,7 +1,10 @@
-function toggleMobileNav() {
+function toggleMobileNav(closeOnly = false) {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
-    x.className += " responsive";
+    if (!closeOnly) {
+      // Only add "responsive" if closeOnly is false
+      x.className += " responsive";
+    }
   } else {
     x.className = "topnav";
   }
@@ -11,6 +14,8 @@ function toggleMobileNav() {
 document.addEventListener("DOMContentLoaded", function () {
   var navLinks = document.querySelectorAll(".nav-toggle");
   navLinks.forEach(function (link) {
-    link.addEventListener("click", toggleMobileNav);
+    link.addEventListener("click", function () {
+      toggleMobileNav(true); // Pass true to only close the menu
+    });
   });
 });

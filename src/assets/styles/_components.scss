@@ -199,7 +199,7 @@
   @media (max-width: $breakpoint-mobile) {
     flex-direction: column;
     height: 100vh;
-    padding: 170px 0 100px 0;
+    padding: 25vh 0 10vh 0;
   }
 }
 
@@ -214,6 +214,7 @@
     margin-left: 0;
     flex-grow: 1;
     align-items: center;
+    height: 0;
   }
 }
 
@@ -262,10 +263,11 @@
   }
 
   .icon-button {
-    display: block;
+    display: block !important; /* Otherwise the button becomes a flexbox which affects its positioning */
     position: absolute;
     top: 16px;
     right: 5px;
+    height: 27px;
   }
 
   .topnav.responsive a {
