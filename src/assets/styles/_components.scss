@@ -138,7 +138,7 @@
   justify-content: space-between;
 
   @media (max-width: $breakpoint-mobile) {
-    padding: 5px 0;
+    padding: 0;
   }
 }
 
@@ -182,7 +182,8 @@
     padding: 0 5vw;
     margin-top: 0;
     margin-bottom: 0;
-    height: 50px;
+    height: 70px;
+    justify-content: center;
   }
 }
 
@@ -197,10 +198,8 @@
 
   @media (max-width: $breakpoint-mobile) {
     flex-direction: column;
-    justify-content: flex-start; /* Reset to default on mobile */
-    padding-left: 0;
-    margin-top: 20px;
-    gap: 40px;
+    height: 100vh;
+    padding: 170px 0 100px 0;
   }
 }
 
@@ -210,10 +209,12 @@
   margin-left: 20px;
   position: relative; /* Add position relative for pseudo-element */
   height: 27px; /* To make sure last item has the same height as the rest */
-}
 
-.topnav__item {
-  display: block;
+  @media (max-width: $breakpoint-mobile) {
+    margin-left: 0;
+    flex-grow: 1;
+    align-items: center;
+  }
 }
 
 .topnav__link,
@@ -224,6 +225,12 @@
   float: left;
   display: block;
   text-align: center;
+}
+
+.topnav__link {
+  @media (max-width: $breakpoint-mobile) {
+    display: none;
+  }
 }
 
 .topnav__item::before {
@@ -244,7 +251,7 @@
 }
 
 // Responsive Top Nav
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. */
 @media (max-width: $breakpoint-mobile) {
   .topnav.responsive {
     position: relative;
@@ -257,7 +264,7 @@
   .icon-button {
     display: block;
     position: absolute;
-    top: 8px;
+    top: 16px;
     right: 5px;
   }
 
@@ -269,7 +276,7 @@
   }
 
   .topnav.responsive .topnav__item {
-    display: block;
+    display: flex;
   }
 }
 
