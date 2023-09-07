@@ -15,10 +15,14 @@ body {
   color: $color-secondary;
 
   @media (max-width: $breakpoint-mobile) {
-    font-size: 14px;
+    font-size: 15px;
   }
-}
 
-html {
-  scroll-behavior: smooth;
+  @media only screen and (max-width: $breakpoint-mobile) and (orientation: landscape) {
+    font-size: 15px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
 }
