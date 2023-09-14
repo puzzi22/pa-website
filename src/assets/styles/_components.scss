@@ -13,7 +13,11 @@
   min-height: 100vh; /* Use min-height to ensure it spans the whole viewport */
   padding: 0 20px 20px;
   color: #fff;
-  background-image: url("../images/bg-hero.jpg?as=webp");
+  background-image: image-set(
+    url("../images/bg-hero.jpg?width=800&as=webp") 1x,
+    url("../images/bg-hero.jpg?width=1200&as=webp") 2x,
+    url("../images/bg-hero.jpg?width=1800&as=webp") 3x
+  );
   background-repeat: no-repeat;
   background-position: center center; // To center the image on desktops
   background-size: cover; // To make sure the off-centering doesn't leave a blank space on the right side
@@ -32,17 +36,29 @@
 }
 
 .agenda-hero {
-  background-image: url("../images/agenda-hero.jpg?as=webp");
+  background-image: image-set(
+    url("../images/agenda-hero.jpg?width=800&as=webp") 1x,
+    url("../images/agenda-hero.jpg?width=1200&as=webp") 2x,
+    url("../images/agenda-hero.jpg?width=1800&as=webp") 3x
+  );
   background-position: top center;
 }
 
 .recordings-hero {
-  background-image: url("../images/recordings-hero.jpg?as=webp");
+  background-image: image-set(
+    url("../images/recordings-hero.jpg?width=800&as=webp") 1x,
+    url("../images/recordings-hero.jpg?width=1200&as=webp") 2x,
+    url("../images/recordings-hero.jpg?width=1800&as=webp") 3x
+  );
   background-position: top center;
 }
 
 .contact-hero {
-  background-image: url("../images/contact-hero.jpg?as=webp");
+  background-image: image-set(
+    url("../images/contact-hero.jpg?width=800&as=webp") 1x,
+    url("../images/contact-hero.jpg?width=1200&as=webp") 2x,
+    url("../images/contact-hero.jpg?width=1800&as=webp") 3x
+  );
   background-position: bottom center;
 }
 
