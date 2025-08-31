@@ -113,6 +113,7 @@
   font-size: $font-size-base;
   line-height: 1.8;
   max-width: 1440px;
+  overflow: auto;
 
   @media (max-width: $breakpoint-mobile) {
     padding: 0 5%;
