@@ -46,6 +46,7 @@ import img5 from "../images/recordings/5.webp";
 import img50 from "../images/recordings/50.webp";
 import img51 from "../images/recordings/51.webp";
 import img52 from "../images/recordings/52.webp";
+import img53 from "../images/recordings/53.webp";
 import img6 from "../images/recordings/6.webp";
 import img7 from "../images/recordings/7.webp";
 import img8 from "../images/recordings/8.webp";
@@ -56,6 +57,7 @@ const recordingsContainer = document.getElementById("recordings-container");
 
 // Array of image filenames (adjust these according to your filenames)
 const imageFilenames = [
+  img53,
   img52,
   img51,
   img50,
