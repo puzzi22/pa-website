@@ -30,7 +30,8 @@
 
 .agenda-hero,
 .contact-hero,
-.recordings-hero {
+.recordings-hero,
+.teaching-hero {
   min-height: 70vh;
   height: 70vh;
 }
@@ -51,6 +52,15 @@
     url("../images/recordings-hero.jpg?width=1800&as=webp") 3x
   );
   background-position: top center;
+}
+
+.teaching-hero {
+  background-image: image-set(
+    url("../images/teaching-hero.jpg?width=800&as=webp") 1x,
+    url("../images/teaching-hero.jpg?width=1200&as=webp") 2x,
+    url("../images/teaching-hero.jpg?width=1800&as=webp") 3x
+  );
+  background-position: bottom 50% center;
 }
 
 .contact-hero {
@@ -84,6 +94,7 @@
 .main-hero__title,
 .agenda-hero__title,
 .recordings-hero__title,
+.teaching-hero__title,
 .contact-hero__title {
   order: 2;
   font-size: $font-size-extra-large;
@@ -99,6 +110,7 @@
 
 .agenda-hero__title,
 .recordings-hero__title,
+.teaching-hero__title,
 .contact-hero__title {
   margin-bottom: 60px;
 }
@@ -211,7 +223,7 @@
   align-items: center;
   justify-content: flex-end; /* Right-align the items */
   margin: 0;
-  gap: 10px;
+  gap: 0px;
 
   @media (max-width: $breakpoint-mobile) {
     flex-direction: column;
@@ -223,7 +235,7 @@
 .topnav__item {
   display: inline-block;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 15px;
   position: relative; /* Add position relative for pseudo-element */
   height: 27px; /* To make sure last item has the same height as the rest */
 
@@ -254,7 +266,7 @@
 .topnav__item::before {
   content: "\25C6"; /* Unicode character for a diamond */
   color: rgba(187, 187, 187, 0.337);
-  margin-left: 20px;
+  margin-left: 15px;
   display: inline-block; /* Add this to make the icon inline with the text */
   margin-bottom: 3px;
 

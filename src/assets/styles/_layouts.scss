@@ -87,7 +87,8 @@
 }
 
 .photo-section__img,
-.recording-section__img {
+.recording-section__img,
+.photo-section-teaching__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -117,6 +118,35 @@
   }
 }
 
+.photo-section-teaching {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12-part grid to allow 4/3/6 spans */
+  grid-auto-rows: auto;
+  gap: 5px;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+/* Default for teaching items: 3 columns each (3/12 = 25%) → groups of 4 per row */
+.photo-section-teaching > .photo-section__link {
+  grid-column: span 3;
+}
+
+/* First three items should be 1/3 each (4/12 = 33.33%) so they fill the first row */
+.photo-section-teaching > .photo-section__link:nth-child(-n+3) {
+  grid-column: span 4;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: $breakpoint-mobile) {
+  .photo-section-teaching {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .photo-section-teaching > .photo-section__link {
+    grid-column: span 1 !important;
+  }
+}
+
 #photos {
   margin-bottom: 60px;
 }
@@ -124,6 +154,25 @@
 .photo-section__link {
   min-width: 48px;
   min-height: 48px;
+}
+
+// PhotoSwipe custom caption styling
+.pswp__custom-caption {
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 16px;
+  color: #fff;
+  max-width: 1000px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.hidden-caption-content {
+  display: none;
 }
 
 /* ------------------------------------ *\

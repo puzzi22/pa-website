@@ -20,6 +20,28 @@ const lightbox = new PhotoSwipeLightbox({
   pswpModule: PhotoSwipe,
 });
 
+// Custom caption
+lightbox.on("uiRegister", () => {
+  lightbox.pswp.ui.registerElement({
+    name: "custom-caption",
+    order: 9,
+    isButton: false,
+    appendTo: "root",
+    html: "",
+    onInit: (el) => {
+      lightbox.pswp.on("change", () => {
+        const currSlideEl = lightbox.pswp.currSlide.data.element;
+        let captionHTML = "";
+        if (currSlideEl) {
+          const hiddenCaption = currSlideEl.querySelector(".hidden-caption-content");
+          captionHTML = hiddenCaption ? hiddenCaption.innerHTML : currSlideEl.querySelector("img").alt;
+        }
+        el.innerHTML = captionHTML;
+      });
+    },
+  });
+});
+
 lightbox.init();
 
 // Language option - Biography
