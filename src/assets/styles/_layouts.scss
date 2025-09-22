@@ -169,6 +169,10 @@
   bottom: 0px;
   transform: translateX(-50%);
   text-align: center;
+
+    @media (max-width: $breakpoint-mobile) {
+      max-width: 100%;
+  }
 }
 
 .hidden-caption-content {
