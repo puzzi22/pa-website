@@ -133,8 +133,7 @@
 }
 
 /* First three items and last three items should be 1/3 each (4/12 = 33.33%) so they fill the first row */
-.photo-section-teaching > .photo-section__link:nth-child(-n+3),
-.photo-section-teaching > .photo-section__link:nth-last-child(-n+3) {
+.photo-section-teaching > .photo-section__link:nth-child(-n+3) {
   grid-column: span 4;
 }
 
